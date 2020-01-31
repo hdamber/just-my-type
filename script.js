@@ -19,8 +19,6 @@ $(document).ready(function () {
     $('#sentence').text(currentSentence);
     $('#target-letter').text(currentLetter);
 
-    // let currentSentence = sentences[0];
-    // let currentLetter = currentSentence[0];
     let start;
     let finish;
     let errors = 0;
@@ -42,6 +40,7 @@ $(document).ready(function () {
 
         }
     });
+    
     //highlights each letter pressed and unhighlights it when not pressed
     $(document).keypress(function (e) {
         console.log(letterIndex);
@@ -63,7 +62,8 @@ $(document).ready(function () {
         //gives a new sentence after the current sentence is finished being typed
         if (letterIndex == currentSentence.length) {
             letterIndex = 0
-            sentenceIndex++
+            if (sentenceIndex != 4){
+                 sentenceIndex++
             console.log(sentenceIndex);
             $('#sentence').text(sentences[sentenceIndex]);
             currentSentence = sentences[sentenceIndex];
@@ -72,9 +72,10 @@ $(document).ready(function () {
             $('#yellow-block').css('left', '17.5px'); //resets the yellow block to the beginning 
             $('#target-letter').text(currentLetter);
 
-
-
-
+            } else if (sentenceIndex == 4) {
+                console.log('shit')
+            }
+           
 
 
             if (sentenceIndex < sentences.length - 1) {
