@@ -73,7 +73,7 @@ $(document).ready(function () {
             $('#target-letter').text(currentLetter);
 
             } else if (sentenceIndex == 4) {
-                console.log('shit')
+                console.log('oops')
             }
            
 
